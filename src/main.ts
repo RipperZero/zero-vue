@@ -1,19 +1,15 @@
 import { createApp } from "vue";
-import "./style.css";
 import App from "./App.vue";
+import router from "./router";
 
-createApp(App).mount('#app')
-// createApp({
-//   data() {
-//     return {
-//       author: {
-//         name: "John Doe",
-//         books: [
-//           "Vue 2 - Advanced Guide",
-//           "Vue 3 - Basic Guide",
-//           "Vue 4 - The Mystery",
-//         ],
-//       },
-//     };
-//   },
-// }).mount("#test");
+import "./assets/main.css";
+
+const app = createApp(App);
+
+app.use(router);
+
+app.config.errorHandler = (err) => {
+  console.log(err);
+};
+
+app.mount("#app");
