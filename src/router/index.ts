@@ -1,5 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
+
 import HomeView from "../views/HomeView.vue";
+import ToDoView from "../views/Todo/ToDoView.vue";
+import DomRefView from "../views/DomRefView.vue";
+import RequestView from "../views/RequestView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,7 +21,22 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import("../views/AboutView.vue"),
     },
+    {
+      path: "/todo-list",
+      name: "todo-list",
+      component: ToDoView,
+    },
+    {
+      path: "/dom-ref",
+      name: "dom-ref",
+      component: DomRefView,
+    },
+    {
+      path: "/request",
+      name: "request",
+      component: RequestView,
+    },
   ],
 });
 
-export default router;
+export { router };
