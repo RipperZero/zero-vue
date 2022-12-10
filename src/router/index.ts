@@ -4,6 +4,7 @@ import HomeView from "../views/HomeView.vue";
 import ToDoView from "../views/Todo/ToDoView.vue";
 import DomRefView from "../views/DomRefView.vue";
 import RequestView from "../views/RequestView.vue";
+import CounterView from "../views/CounterView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,6 +36,11 @@ const router = createRouter({
       path: "/request",
       name: "request",
       component: RequestView,
+    },
+    {
+      path: "/counter",
+      name: "counter",
+      component: CounterView,
     },
   ],
 });

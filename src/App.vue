@@ -22,6 +22,7 @@ import HelloWorld from "./components/HelloWorld.vue";
         <RouterLink to="/todo-list">TodoList</RouterLink>
         <RouterLink to="/dom-ref">DomRef</RouterLink>
         <RouterLink to="/request">Request</RouterLink>
+        <RouterLink to="/counter">Counter</RouterLink>
       </nav>
     </div>
   </header>
