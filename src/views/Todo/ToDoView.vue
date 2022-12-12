@@ -61,18 +61,24 @@ const handleFire = (text: string) => {
     </form>
 
     <ul>
-      <li v-for="todo in filteredTodos" :key="todo.id">
-        <ToDo
-          :todo="todo"
-          @fire="handleFire"
-          v-bind:on-delete="() => deleteTodo(todo)"
-          v-bind:on-mark="
-            () => {
-              todo.done = !todo.done;
-            }
-          "
-        />
-      </li>
+      <!-- <template v-for="(todo, index) in filteredTodos" :key="todo.id"> -->
+      <ToDo
+        v-for="todo in filteredTodos"
+        :key="todo.id"
+        :todo="todo"
+        @fire="handleFire"
+        v-bind:on-delete="() => deleteTodo(todo)"
+        v-bind:on-mark="
+          () => {
+            todo.done = !todo.done;
+          }
+        "
+      />
+      <!-- <pre>Todo index is {{ index }}</pre>
+        <pre v-for="(value, key) in todo" :key="key">
+          {{ key }}: {{ value }}
+        </pre> -->
+      <!-- </template> -->
     </ul>
 
     <button @click="hideCompleted = !hideCompleted">

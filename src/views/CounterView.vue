@@ -3,11 +3,16 @@ import { ref } from "vue";
 
 const state = ref({ count: 0 });
 
-const increment = () => {
+const increment = (_event: MouseEvent | KeyboardEvent) => {
+  // console.log(event);
+
   state.value.count++;
 };
 
-const decrement = () => {
+const decrement = (_payload: string, _event: MouseEvent | KeyboardEvent) => {
+  // console.log(payload);
+  // console.log(event);
+
   if (state.value.count === 0) {
     return;
   }
@@ -18,9 +23,15 @@ const decrement = () => {
 
 <template>
   <div>
-    <button class="addBtn" @click="increment">+</button>
+    <button class="addBtn" @click="increment" @keyup.left="increment">+</button>
     <span>{{ state.count }}</span>
-    <button class="subtractBtn" @click="decrement">-</button>
+    <button
+      class="subtractBtn"
+      @click="decrement('decrement', $event)"
+      @keyup.right="decrement('decrement', $event)"
+    >
+      -
+    </button>
   </div>
 </template>
 

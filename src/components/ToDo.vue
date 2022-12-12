@@ -17,10 +17,12 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <button @click="emit('fire', todo.text)">Fire</button>
-  <input type="checkbox" :checked="todo.done" @click="onMark" />
-  <span :class="{ done: todo.done }">{{ todo.text }}</span>
-  <button @click="onDelete">X</button>
+  <li>
+    <button @click="emit('fire', todo.text)">Fire</button>
+    <input type="checkbox" :checked="todo.done" @click="onMark" />
+    <span :class="{ done: todo.done }">{{ todo.text }}</span>
+    <button @click="onDelete">X</button>
+  </li>
 </template>
 
 <style>
