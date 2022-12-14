@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { axiosInstance } from "@/utils";
-import { onMounted, ref, watch } from "vue";
+import { onMounted, ref, watch, watchEffect } from "vue";
 
 type ResObj = {
   data: {
@@ -22,24 +22,33 @@ const loading = ref(false);
 const userInfo = ref<ResObj["data"] | undefined>(undefined);
 
 const getUserInfoById = async () => {
+  userInfo.value = undefined;
   loading.value = true;
+
   const res = (await axiosInstance.get(`/api/users/${userId.value}`)) as ResObj;
 
   loading.value = false;
   userInfo.value = res.data;
 };
 
-watch(userId, getUserInfoById);
+const unwatch = watch(userId, (_value, _oldValue) => {
+  getUserInfoById();
+});
 
 onMounted(() => {
   getUserInfoById();
 });
+
+// watchEffect(() => {
+//   getUserInfoById();
+// });
 </script>
 
 <template>
   <div>
     <p>User Id: {{ userId }}</p>
     <button @click="userId++" :disabled="loading">Query next user</button>
+    <button @click="unwatch">Unwatch</button>
 
     <p v-if="!userInfo">Loading...</p>
     <!-- <p v-if="userInfo === undefined">Loading...</p> -->

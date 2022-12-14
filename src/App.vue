@@ -23,6 +23,7 @@ import HelloWorld from "./components/HelloWorld.vue";
         <RouterLink to="/dom-ref">DomRef</RouterLink>
         <RouterLink to="/request">Request</RouterLink>
         <RouterLink to="/counter">Counter</RouterLink>
+        <RouterLink to="/dynamic-tab">DynamicTab</RouterLink>
       </nav>
     </div>
   </header>
