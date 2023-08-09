@@ -1,0 +1,21 @@
+{
+  "configurations": [
+    {
+      "name": "Debug JS segment",
+      "type": "node",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${file}"
+    },
+    // @see https://juejin.cn/post/7144238328655642637#heading-7
+    {
+      "name": "Debug TS segment",
+      "type": "node",
+      "request": "launch",
+      // yarn add ts-node --dev
+      "runtimeArgs": ["-r", "${workspaceRoot}/node_modules/ts-node/register"],
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${file}"
+    }
+  ]
+}
