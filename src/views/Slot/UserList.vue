@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { onMounted, ref, withDefaults } from "vue";
+import { onMounted, ref } from "vue";
 import { axiosInstance } from "@/utils";
 
 const props = withDefaults(
