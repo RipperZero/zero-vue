@@ -147,13 +147,13 @@ onMounted(() => {
           - <span class="message">{{ truncate(commit.message) }}</span
           ><br />
           by
-          <span class="author">
+          <span class="font-bold">
             <a :href="author.html_url" target="_blank">{{
               commit.author.name
             }}</a>
           </span>
           at
-          <span class="date">{{
+          <span class="font-bold">{{
             formatDate(commit.author.date.toString())
           }}</span>
         </li>
@@ -163,16 +163,9 @@ onMounted(() => {
 </template>
 
 <style scoped>
-a {
-  text-decoration: none;
-  color: #42b883;
-}
 li {
-  line-height: 1.5em;
-  margin-bottom: 20px;
-}
-.author,
-.date {
-  font-weight: bold;
+  /* line-height: 1.5em;
+  margin-bottom: 20px; */
+  @apply leading-6 mb-5;
 }
 </style>

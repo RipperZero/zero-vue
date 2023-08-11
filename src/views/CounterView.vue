@@ -23,10 +23,9 @@ const decrement = (_payload: string, _event: MouseEvent | KeyboardEvent) => {
 
 <template>
   <div>
-    <button class="addBtn" @click="increment" @keyup.left="increment">+</button>
-    <span>{{ state.count }}</span>
+    <button @click="increment" @keyup.left="increment">+</button>
+    <span class="mx-4">{{ state.count }}</span>
     <button
-      class="subtractBtn"
       @click="decrement('decrement', $event)"
       @keyup.right="decrement('decrement', $event)"
     >
@@ -35,12 +34,4 @@ const decrement = (_payload: string, _event: MouseEvent | KeyboardEvent) => {
   </div>
 </template>
 
-<style scoped>
-.addBtn {
-  margin-right: 10px;
-}
-
-.subtractBtn {
-  margin-left: 10px;
-}
-</style>
+<style scoped></style>

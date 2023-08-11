@@ -38,9 +38,4 @@ const notify = () => {
   </div>
 </template>
 
-<style scoped>
-a {
-  display: block;
-  margin-bottom: 1em;
-}
-</style>
+<style scoped></style>

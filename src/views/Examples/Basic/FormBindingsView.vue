@@ -47,10 +47,7 @@ const multiSelected = ref<string[] | undefined>();
         <a-space direction="vertical">
             <div>
                 <a-typography-title :level="2">Text Input</a-typography-title>
-                <!-- <a-input
-      style="padding: 0; width: 50%"
-      :class="{ textInput: true }" -->
-                <a-input class="textInput textInputTest" size="small" showCount allowClear v-model:value="text" />
+                <a-input class="w-1/2" size="small" showCount allowClear v-model:value="text" />
                 {{ text }}
             </div>
 
@@ -123,12 +120,5 @@ const multiSelected = ref<string[] | undefined>();
     </div>
 </template>
 
-<style scoped>
-.textInput {
-    width: 50%;
-}
+<style scoped></style>
 
-/* .textInputTest {
-  background-color: red;
-} */
-</style>

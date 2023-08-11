@@ -15,7 +15,7 @@ const toggleColor = () => {
 </script>
 
 <template>
-  <div>
+  <div class="select-none cursor-pointer">
     <p>
       <!-- title @see https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/title -->
       <!-- 将元素的 attribute / property 响应式地绑定到状态上。这个 :title 语法是 v-bind:title 的简写。 -->
@@ -26,7 +26,7 @@ const toggleColor = () => {
     </p>
 
     <!-- 除了普通字符串之外，class 绑定还特别支持了对象和数组 -->
-    <p :class="{ red: isRed }" @click="toggleRed">
+    <p :class="{ 'text-red-500': isRed }" @click="toggleRed">
       This should be red... but click me to toggle it.
     </p>
 
@@ -37,8 +37,4 @@ const toggleColor = () => {
   </div>
 </template>
 
-<style scoped>
-.red {
-  color: red;
-}
-</style>
+<style scoped></style>

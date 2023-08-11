@@ -68,7 +68,7 @@ const handleMenuClick: MenuProps["onClick"] = (e) => {
     </div>
   </header>
 
-  <RouterView />
+  <RouterView class="max-h-[80vh] overflow-auto scrollbar-zero" />
 </template>
 
 <style scoped>

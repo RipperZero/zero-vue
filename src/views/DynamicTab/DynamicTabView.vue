@@ -19,13 +19,20 @@ const currentTabKey = ref<keyof typeof tabs>("Home");
     <button
       v-for="(_, tabKey) in tabs"
       :key="tabKey"
-      :class="['tab-button', { active: currentTabKey === tabKey }]"
+      class="border border-black border-solid hover:text-blue-500 rounded-t-md cursor-pointer p-2"
+      :class="{
+        'bg-slate-300 text-blue-500': currentTabKey === tabKey,
+        // 'm-4': currentTabKey === tabKey,
+      }"
       @click="currentTabKey = tabKey"
     >
       {{ tabKey }}
     </button>
 
-    <component :is="tabs[currentTabKey]" class="tab" />
+    <component
+      :is="tabs[currentTabKey]"
+      class="border border-black border-solid p-3"
+    />
   </div>
 </template>
 
@@ -41,24 +48,7 @@ const currentTabKey = ref<keyof typeof tabs>("Home");
   overflow-x: auto;
 }
 
-.tab-button {
-  padding: 6px 10px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  border: 1px solid #ccc;
-  cursor: pointer;
-  background: #f0f0f0;
-  margin-bottom: -1px;
-  margin-right: -1px;
-}
-.tab-button:hover {
-  background: #e0e0e0;
-}
-.tab-button.active {
-  background: #e0e0e0;
-}
-.tab {
-  border: 1px solid #ccc;
-  padding: 10px;
-}
+/* .tab {
+  @apply border border-black border-solid p-3;
+} */
 </style>

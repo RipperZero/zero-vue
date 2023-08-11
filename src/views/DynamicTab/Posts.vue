@@ -1,5 +1,5 @@
 <script setup lang="ts" />
 
 <template>
-  <div class="tab">Posts component</div>
+  <div>Posts component</div>
 </template>

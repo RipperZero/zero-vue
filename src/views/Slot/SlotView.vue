@@ -29,7 +29,7 @@ import UserList from "./UserList.vue";
         <div>
           <p>User Id:{{ userInfo.id }}</p>
           <img :src="userInfo.avatar" alt="Avatar" />
-          <p class="meta">
+          <p class="text-xm text-[#42b883]">
             {{ userInfo.first_name }} - {{ userInfo.last_name }}
           </p>
         </div>
@@ -38,9 +38,4 @@ import UserList from "./UserList.vue";
   </div>
 </template>
 
-<style scoped>
-.meta {
-  font-size: 0.8em;
-  color: #42b883;
-}
-</style>
+<style scoped></style>

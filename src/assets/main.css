@@ -1,4 +1,29 @@
-@import "./base.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* TODO add classname in Tailwind CSS IntelliSense */
+@layer components {
+  /* @see https://developer.mozilla.org/zh-CN/docs/Web/CSS/clear#%E5%B0%9D%E8%AF%95%E4%B8%80%E4%B8%8B */
+  .clearfix::after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+
+  /* @see https://www.cnblogs.com/Ry-yuan/p/6848197.html */
+  .clear-inline-block-gap {
+    font-size: 0;
+  }
+
+  .scrollbar-zero {
+    @apply scrollbar-thin scrollbar-track-slate-200 scrollbar-thumb-slate-400;
+  }
+}
+
+/* @import "./base.css"; */
 
 #app {
   max-width: 1280px;

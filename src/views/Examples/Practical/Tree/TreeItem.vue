@@ -38,7 +38,11 @@ const changeType = () => {
 
 <template>
   <li>
-    <div :class="{ bold: isFolder }" @click="toggle" @dblclick="changeType">
+    <div
+      :class="{ 'font-bold': isFolder }"
+      @click="toggle"
+      @dblclick="changeType"
+    >
       {{ treeData.name }}
       <span v-if="isFolder">[{{ isOpen ? "-" : "+" }}]</span>
     </div>
@@ -47,7 +51,6 @@ const changeType = () => {
       <!-- 一个可以通过其“name”选项递归渲染自己的组件，
       (使用单文件组件，从文件名推断) -->
       <TreeItem
-        class="item"
         v-for="treeData in props.treeData.children"
         :tree-data="treeData"
       />
@@ -55,12 +58,4 @@ const changeType = () => {
   </li>
 </template>
 
-<style scoped>
-.item {
-  cursor: pointer;
-  line-height: 1.5;
-}
-.bold {
-  font-weight: bold;
-}
-</style>
+<style scoped></style>

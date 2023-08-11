@@ -34,14 +34,12 @@ const treeData = ref<TreeData>({
 <template>
   <div>
     <ul>
-      <TreeItem class="item" :tree-data="treeData"></TreeItem>
+      <TreeItem
+        class="cursor-pointer leading-normal"
+        :tree-data="treeData"
+      ></TreeItem>
     </ul>
   </div>
 </template>
 
-<style scoped>
-.item {
-  cursor: pointer;
-  line-height: 1.5;
-}
-</style>
+<style scoped></style>

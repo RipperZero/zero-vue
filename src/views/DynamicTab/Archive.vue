@@ -1,5 +1,5 @@
 <script setup lang="ts" />
 
 <template>
-  <div class="tab">Archive component</div>
+  <div>Archive component</div>
 </template>

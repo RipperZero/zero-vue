@@ -30,14 +30,10 @@ const emit = defineEmits<{
   <li>
     <button @click="emit('fire', todo.text)">Fire</button>
     <input type="checkbox" :checked="todo.done" @click="onMark" />
-    <span :class="{ done: todo.done }">{{ todo.text }}</span>
+    <span :class="{ 'line-through': todo.done }">{{ todo.text }}</span>
     <button @click="onDelete">X</button>
     {{ zero }}
   </li>
 </template>
 
-<style scoped>
-.done {
-  text-decoration: line-through;
-}
-</style>
+<style scoped></style>

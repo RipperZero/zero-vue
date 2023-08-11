@@ -14,25 +14,21 @@ const update = debounce((e: Event) => {
 </script>
 
 <template>
-  <div class="editor">
+  <div class="h-[80vh] flex">
     <textarea class="input" :value="input" @input="update"></textarea>
     <div class="output" v-html="output"></div>
   </div>
 </template>
 
 <style scoped>
-.editor {
-  height: 80vh;
-  display: flex;
-}
-
 .input,
 .output {
-  overflow: auto;
+  /* overflow: auto;
   width: 50%;
   height: 100%;
   box-sizing: border-box;
-  padding: 0 20px;
+  padding: 0 20px; */
+  @apply overflow-auto w-1/2 h-full box-border px-5;
 }
 
 .input {
