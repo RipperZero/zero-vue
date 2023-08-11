@@ -29,7 +29,7 @@ const currentTabKey = ref<keyof typeof tabs>("Home");
   </div>
 </template>
 
-<style>
+<style scoped>
 .demo {
   font-family: sans-serif;
   border: 1px solid #eee;

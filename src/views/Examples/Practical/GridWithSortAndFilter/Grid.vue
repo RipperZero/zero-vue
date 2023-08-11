@@ -126,7 +126,7 @@ const data = props.data.map<TableData>((item, index) => {
   </a-space>
 </template>
 
-<style>
+<style scoped>
 table {
   border: 2px solid #42b983;
   border-radius: 3px;

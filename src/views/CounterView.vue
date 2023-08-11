@@ -35,7 +35,7 @@ const decrement = (_payload: string, _event: MouseEvent | KeyboardEvent) => {
   </div>
 </template>
 
-<style>
+<style scoped>
 .addBtn {
   margin-right: 10px;
 }

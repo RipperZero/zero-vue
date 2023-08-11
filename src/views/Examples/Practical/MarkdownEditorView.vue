@@ -20,7 +20,7 @@ const update = debounce((e: Event) => {
   </div>
 </template>
 
-<style>
+<style scoped>
 .editor {
   height: 80vh;
   display: flex;

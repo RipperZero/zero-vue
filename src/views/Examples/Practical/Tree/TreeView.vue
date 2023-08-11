@@ -39,7 +39,7 @@ const treeData = ref<TreeData>({
   </div>
 </template>
 
-<style>
+<style scoped>
 .item {
   cursor: pointer;
   line-height: 1.5;

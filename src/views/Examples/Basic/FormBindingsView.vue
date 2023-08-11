@@ -123,7 +123,7 @@ const multiSelected = ref<string[] | undefined>();
     </div>
 </template>
 
-<style>
+<style scoped>
 .textInput {
     width: 50%;
 }

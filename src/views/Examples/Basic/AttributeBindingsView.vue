@@ -37,7 +37,7 @@ const toggleColor = () => {
   </div>
 </template>
 
-<style>
+<style scoped>
 .red {
   color: red;
 }

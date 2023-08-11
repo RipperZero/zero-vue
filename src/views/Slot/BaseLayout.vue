@@ -14,7 +14,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 footer {
   border-top: 1px solid #ccc;
   color: #666;
