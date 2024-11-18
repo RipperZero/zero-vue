@@ -27,6 +27,8 @@ coverage
 *.sln
 *.sw?
 
+*.tsbuildinfo
+
 # package lock
 *.lock
 pnpm-lock.yaml

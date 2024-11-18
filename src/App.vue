@@ -1,30 +1,11 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
-import { DownOutlined, LinkOutlined } from "@ant-design/icons-vue";
-import type { MenuProps } from "ant-design-vue";
-
-import { routes, router } from "@/router";
-import HelloWorld from "./components/HelloWorld.vue";
-
-const examplesInfo =
-  routes.find((route) => {
-    return route.name === "examples";
-  })?.children ?? [];
-
-const handleMenuClick: MenuProps["onClick"] = (e) => {
-  router.push(`/examples/${e.key}`);
-};
+import { RouterLink, RouterView } from 'vue-router'
+import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
   <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
-    />
+    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
@@ -32,43 +13,11 @@ const handleMenuClick: MenuProps["onClick"] = (e) => {
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/todo-list">TodoList</RouterLink>
-        <RouterLink to="/dom-ref">DomRef</RouterLink>
-        <RouterLink to="/request">Request</RouterLink>
-        <RouterLink to="/counter">Counter</RouterLink>
-        <RouterLink to="/dynamic-tab">DynamicTab</RouterLink>
-        <RouterLink to="/v-model">V-Model</RouterLink>
-        <RouterLink to="/slot">Slot</RouterLink>
       </nav>
-
-      <a-dropdown>
-        <template #overlay>
-          <a-menu @click="handleMenuClick">
-            <a-sub-menu
-              v-for="exampleChildren of examplesInfo"
-              :key="exampleChildren.path"
-              :title="exampleChildren.name?.toString().toUpperCase()"
-            >
-              <a-menu-item
-                v-for="exampleItem of exampleChildren.children"
-                :key="`${exampleChildren.path}/${exampleItem.path}`"
-              >
-                <LinkOutlined />
-                {{ exampleItem.name?.toString().toUpperCase() }}
-              </a-menu-item>
-            </a-sub-menu>
-          </a-menu>
-        </template>
-
-        <a-button type="primary" shape="round">
-          Examples
-          <DownOutlined />
-        </a-button>
-      </a-dropdown>
     </div>
   </header>
 
-  <RouterView class="max-h-[80vh] overflow-auto scrollbar-zero" />
+  <RouterView />
 </template>
 
 <style scoped>
