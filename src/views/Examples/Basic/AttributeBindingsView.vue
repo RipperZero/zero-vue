@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { twMerge } from "tailwind-merge";
 import { ref } from "vue";
 
 const message = ref("Hello World!");
@@ -26,12 +27,13 @@ const toggleColor = () => {
     </p>
 
     <!-- 除了普通字符串之外，class 绑定还特别支持了对象和数组 -->
-    <p :class="{ 'text-red-500': isRed }" @click="toggleRed">
+    <!-- <p :class="{ 'text-red-500': isRed }" @click="toggleRed"> -->
+    <p :class="twMerge(isRed && 'text-red-500')" @click="toggleRed">
       This should be red... but click me to toggle it.
     </p>
 
     <!-- 样式绑定也支持对象和数组 -->
-    <p :style="{ color }" @click="toggleColor">
+    <p :style="{ color: color }" @click="toggleColor">
       This should be green, and should toggle between green and blue on click.
     </p>
   </div>

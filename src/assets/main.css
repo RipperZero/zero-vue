@@ -23,6 +23,21 @@
   }
 }
 
+@supports (height: 100dvh) {
+  :root {
+    --viewport-height: 100dvh;
+  }
+}
+
+/* TODO confirm */
+@supports not (height: 100dvh) {
+  :root {
+    /* polyfill from large-small-dynamic-viewport-units-polyfill(import from main.tsx) */
+    /* @see https://github.com/joppuyo/large-small-dynamic-viewport-units-polyfill */
+    --viewport-height: calc(var(--1dvh, 1vh) * 100);
+  }
+}
+
 /* @import "./base.css"; */
 
 #app {

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-export type Todo = {
+type Todo = {
   id: number;
   text: string;
 };
@@ -7,6 +7,8 @@ export type Todo = {
 const props = defineProps<{
   todo: Todo;
 }>();
+
+export type { Todo };
 </script>
 
 <template>

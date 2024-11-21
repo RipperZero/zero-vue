@@ -1,5 +1,8 @@
 import { createApp } from "vue";
 import Antd from "ant-design-vue";
+// polyfill for(lvh svh dvh)
+// @see https://github.com/joppuyo/large-small-dynamic-viewport-units-polyfill
+import "large-small-dynamic-viewport-units-polyfill";
 
 import App from "./App.vue";
 import { router } from "./router";
